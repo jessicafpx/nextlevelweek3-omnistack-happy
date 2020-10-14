@@ -70,6 +70,7 @@
   background: rgba(255, 255, 255, 0.8);
   border-radius: 20px;
   height: 54px;
+  box-shadow: none;
 }
 
 #page-map .map-popup .leaflet-popup-content {
