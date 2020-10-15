@@ -13,7 +13,7 @@ Aplicação desenvolvida durante a Next Level Week #3, da Rocketseat. Happy é u
 As tecnologias utilizadas neste projeto foram:
 
 - TypeScript
-- ReactJS (front-end web)
+- ReactJS (frontend web)
 - Node.js (backend)
 - React Native (mobile)
 
