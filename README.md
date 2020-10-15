@@ -23,9 +23,9 @@ As tecnologias utilizadas neste projeto foram:
 O layout da aplicação está disponível no Figma:
 
 <a href="https://www.figma.com/file/fqSVRn4tN3qeMVJvLXPOYm/Happy-Web-(Copy)?node-id=0%3A1">
-  <img alt="figma" src="https://img.shields.io/badge/Acessar%20Layout%20-Figma-%2304D361">
+  <img alt="figma" src="https://img.shields.io/badge/Acessar%20Layout%20Web%20-Figma-%2304D361">
 </a>
 
 <a href="https://www.figma.com/file/sXf9GpF6AzQyLZW650RBBR/Happy-Mobile-Copy?node-id=0%3A1">
-  <img alt="figma" src="https://img.shields.io/badge/Acessar%20Layout%20-Figma-%2304D361">
+  <img alt="figma" src="https://img.shields.io/badge/Acessar%20Layout%20Mobile%20-Figma-%2304D361">
 </a>
