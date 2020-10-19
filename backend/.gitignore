@@ -1,8 +1,4 @@
-.idea/
-.vscode/
-node_modules/
-build/
-temp/
+node_modules
 
-tmp/*
-!tmp/.gitkeep
+uploads/*
+!uploads/.gitkeep
