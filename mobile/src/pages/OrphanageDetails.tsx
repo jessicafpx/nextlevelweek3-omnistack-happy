@@ -19,11 +19,12 @@ interface Orphanage {
   latitude: number;
   longitude: number;
   about: string;
+  whatsapp: string;
   instructions: string;
   opening_hours: string;
   open_on_weekends: boolean;
   images: Array<{
-    image: number;
+    id: number;
     url: string;
   }>;
 }
@@ -57,9 +58,9 @@ export default function OrphanageDetails() {
       <View style={styles.imagesContainer}>
         <ScrollView horizontal pagingEnabled>
           {orphanage.images.map(img => {
-            const newpath = (img.url).replace("localhost", "192.168.0.12");
+            const newpath = (img.url).replace("127.0.0.1", "192.168.0.12");
             return (
-              <Image key={img.image} style={styles.image} source={{ uri: newpath }} />
+              <Image key={img.id} style={styles.image} source={{ uri: newpath }} />
             );
           })}
 
@@ -124,10 +125,10 @@ export default function OrphanageDetails() {
 
         </View>
 
-        {/* <RectButton style={styles.contactButton} onPress={() => { }}>
+        <RectButton style={styles.contactButton} onPress={() => { }}>
           <FontAwesome name="whatsapp" size={24} color="#FFF" />
-          <Text style={styles.contactButtonText}>Entrar em contato</Text>
-        </RectButton> */}
+          <Text style={styles.contactButtonText} onPress={() => Linking.openURL(`https://api.whatsapp.com/send?1=pt_BR&phone=+55${orphanage.whatsapp}`)}>Entrar em contato</Text>
+        </RectButton>
       </View>
     </ScrollView>
   )
