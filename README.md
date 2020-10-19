@@ -45,7 +45,7 @@ As tecnologias utilizadas neste projeto foram:
 - Funcionalidade de excluir fotos do preview de imagens no formulário de cadastrar novo orfanato
   
 
-### Mobile
+### 📱 Mobile
 
 <img src="./assets/mobile.gif">
 
