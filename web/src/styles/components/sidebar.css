@@ -31,6 +31,8 @@ aside.app-sidebar footer button {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  outline: none;
 }
 
 aside.app-sidebar footer a:hover,

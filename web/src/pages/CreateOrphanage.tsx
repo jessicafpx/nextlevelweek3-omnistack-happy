@@ -3,7 +3,7 @@ import { Map, Marker, TileLayer } from 'react-leaflet';
 import { LeafletMouseEvent } from 'leaflet';
 import { useHistory } from 'react-router-dom';
 
-import { FiPlus } from 'react-icons/fi';
+import { FiPlus, FiX } from 'react-icons/fi';
 
 import Sidebar from '../components/Sidebar';
 import mapIcon from '../utils/mapIcon';
@@ -17,8 +17,9 @@ export default function CreateOrphanage() {
   const [position, setPosition] = useState({ latitude: 0, longitude: 0 });
 
   const [name, setName] = useState('');
-  const [about, setAbout] = useState('');
   const [instructions, setInstructions] = useState('');
+  const [about, setAbout] = useState('');
+  const [whatsapp, setWhatsapp] = useState('');
   const [opening_hours, setOpeningHours] = useState('');
   const [open_on_weekends, setOpenOnWeekends] = useState(true);
   const [images, setImages] = useState<File[]>([]);
@@ -49,6 +50,20 @@ export default function CreateOrphanage() {
     setPreviewImages(selectedImagesPreview);
   }
 
+  function handleDeleteImages(index: number) {
+    const deletedImagesPreview = previewImages.filter(
+      (image, compareIndex) => index !== compareIndex,
+    );
+
+    setPreviewImages(deletedImagesPreview);
+
+    const deletedImages = images.filter(
+      (image, compareIndex) => index !== compareIndex,
+    );
+
+    setImages(deletedImages);
+  }
+
   async function handleSubmit(event: FormEvent) {
     event.preventDefault();
 
@@ -58,6 +73,7 @@ export default function CreateOrphanage() {
 
     data.append('name', name);
     data.append('about', about);
+    data.append('whatsapp', whatsapp);
     data.append('latitude', String(latitude));
     data.append('longitude', String(longitude));
     data.append('instructions', instructions);
@@ -127,11 +143,31 @@ export default function CreateOrphanage() {
             </div>
 
             <div className="input-block">
+              <label htmlFor="whatsapp">Número de Whatsapp</label>
+              <input
+                id="whatsapp"
+                value={whatsapp}
+                onChange={event => setWhatsapp(event.target.value)}
+              />
+            </div>
+
+            <div className="input-block">
               <label htmlFor="images">Fotos</label>
 
               <div className="images-container">
-                {previewImages.map(image => {
-                  return <img key={image} src={image} alt={name} />;
+                {previewImages.map((image, index) => {
+                  return (
+                    <div key={image}>
+                      <img src={image} alt={name} />
+
+                      <button
+                        type="button"
+                        onClick={() => handleDeleteImages(index)}
+                      >
+                        <FiX size={20} color="#F8659E" />
+                      </button>
+                    </div>
+                  );
                 })}
 
                 <label htmlFor="image[]" className="new-image">

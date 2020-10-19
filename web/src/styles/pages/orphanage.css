@@ -26,10 +26,12 @@
 
 .orphanage-details .images {
   display: grid;
-  grid-template-columns: repeat(6 ,1fr);
+  grid-template-columns: repeat(6, 1fr);
   column-gap: 16px;
+  row-gap: 16px;
 
   margin: 16px 40px 0;
+
 }
 
 .orphanage-details .images button {
@@ -42,6 +44,12 @@
   outline: none;
 
   opacity: 0.6;
+  transition: 0.2s;
+}
+
+
+.orphanage-details .images button:hover {
+  opacity: 1;
 }
 
 .orphanage-details .images button.active {
@@ -146,7 +154,7 @@
   color: #ff6690;
 }
 
-.orphanage-details .orphanage-details-content button.contact-button {
+.orphanage-details .orphanage-details-content a.contact-button {
   margin-top: 64px;
 
   width: 100%;
@@ -157,6 +165,7 @@
   border-radius: 20px;
   color: #FFFFFF;
   font-weight: 800;
+  text-decoration: none;
 
   display: flex;
   justify-content: center;
@@ -165,10 +174,10 @@
   transition: background-color 0.2s;
 }
 
-.orphanage-details .orphanage-details-content button.contact-button svg {
+.orphanage-details .orphanage-details-content a.contact-button svg {
   margin-right: 16px;
 }
 
-.orphanage-details .orphanage-details-content button.contact-button:hover {
+.orphanage-details .orphanage-details-content a.contact-button:hover {
   background: #36CF82;
 }

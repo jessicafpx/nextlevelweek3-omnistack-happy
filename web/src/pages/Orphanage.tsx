@@ -16,6 +16,7 @@ interface Orphanage {
   longitude: number;
   name: string;
   about: string;
+  whatsapp: string;
   istructions: string;
   opening_hours: string;
   open_on_weekends: boolean;
@@ -43,6 +44,8 @@ function Orphanage() {
   if (!orphanage) {
     return <p>Carregando...</p>;
   }
+
+  console.log(orphanage.images);
 
   return (
     <div id="page-orphanage">
@@ -116,14 +119,18 @@ function Orphanage() {
             <div className="open-details">
               <div className="hour">
                 <FiClock size={32} color="#15B6D6" />
-                Segunda à Sexta <br />
+                Segunda à Sexta
+{' '}
+                <br />
                 {orphanage.opening_hours}
               </div>
 
               {orphanage.open_on_weekends ? (
                 <div className="open-on-weekends">
                   <FiInfo size={32} color="#39CC83" />
-                  Atendemos <br />
+                  Atendemos
+                  {' '}
+                  <br />
                   fim de semana
                 </div>
               ) : (
@@ -135,10 +142,15 @@ function Orphanage() {
                 )}
             </div>
 
-            <button type="button" className="contact-button">
+            <a
+              href={`https://api.whatsapp.com/send?1=pt_BR&phone=+55${orphanage.whatsapp}`}
+              className="contact-button"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FaWhatsapp size={20} color="#FFF" />
               Entrar em contato
-            </button>
+            </a>
           </div>
         </div>
       </main>
