@@ -71,4 +71,4 @@ O layout da aplicação está disponível no Figma:
 
 ---
 
-##### <p align="center"> <strong> < desenvolvido por <a href="github.com/jessicafpx"> @jessicafpx</a> /> </strong> 👋
+##### <p align="center"> <strong> <desenvolvido por <a href="github.com/jessicafpx"> @jessicafpx</a> /> </strong> 👋
